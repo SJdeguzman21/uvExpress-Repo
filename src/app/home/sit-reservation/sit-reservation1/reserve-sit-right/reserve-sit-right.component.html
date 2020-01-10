@@ -1,0 +1,65 @@
+
+
+<div *ngIf ="!selected"style="margin-top: 10%; margin-left: 20%;">    
+    <a style="margin-left: 90%; color: blur">Back</a>
+      <h2 style="color:#39FF14;" >  Select a UV Plate Number</h2>
+</div>
+<div  *ngIf ="selected ">    
+    <div class="container-fluid">
+        <div class="row jumbotron" >
+            <div style="margin-left: 25%;">
+                <p><b>Driver's Name: </b> {{selected.name}} </p>
+                <p><b>Plate Number : </b>{{selected.plate}}</p>
+                <p><b>Route : </b>{{selected.route}}</p>
+                <p><b>Max Passeger Capacity: </b>{{selected.sit}}</p>  
+                <div *ngIf="quantity"><p><b>Sit Reserved: </b> {{quantity.quantity}}</p></div>         
+            </div>
+        </div>
+    </div>
+
+    <div text-center style="margin-top: 60px; margin-left: 10%; margin-right: 10%;">
+        <form   #f = "ngForm" (ngSubmit) = "reserve(f.value )" *ngIf =" full == false">
+            <div class="row">
+                <div class="col-8">
+                    <input #passengerName="ngModel" ngModel name="passengerName" id ="passengerName" 
+                    type="text" class="form-control" placeholder="Name" required >
+                </div>
+                <div class="col-4" >
+                    <button class="btn btn-primary" [disabled]="!f.valid"type="submit" (click)="bts(selected)" 
+                   >Reserved</button>
+                </div>
+            </div>
+        </form>
+        <div *ngIf = "full == true" >
+            <h1 style="color:#39FF14; text-align: center;"> The UV is Full</h1>
+        </div><br>
+    </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+      <div *ngIf = "!quantity" >
+        <h1 style="color:#39FF14; text-align: center;"> No reserved Passengers</h1>
+      </div>
+         <table class="table table-striped text-center" *ngIf="quantity">
+            <thead>
+              <tr>
+                <th>Passenger's Name </th>
+                <th>PLate Number</th>
+                <th>Sit Number</th>
+                <th> </th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let r of reservedList" >
+                  <td>{{r.passengerName}}</td>
+                  <td>{{r.plate}}</td>
+                  <td>{{r.sitNumber}}</td>
+                  <td> <a (click)="viewCode(r)" style="color: blue;"> View Details</a></td>
+                <td> </td>
+                </tr>
+            </tbody>
+        </table> 
+        <button *ngIf=" full == true" style=" margin-left: 45%;" class="btn btn-danger" type="button" (click) = "done()"> Done</button>
+  </div>
+</div>

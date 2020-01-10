@@ -1,0 +1,37 @@
+<div class="card" style="margin-right: 20%; margin-left: 20%; margin-top: 3%;">
+        <div class="card-body">
+        <h2 text-center>Details</h2>
+          <table class="table table-striped text-center">
+              <tbody>
+                <tr >
+                  <td>Driver's Full Name</td>
+                  <td>{{ data.name}}</td>
+                </tr>
+                <tr>
+                    <td>Plate Number</td>
+                    <td>{{data.plate}}</td>
+                </tr>
+                <tr>
+                    <td>UV Route</td>
+                    <td>{{data.route}}</td>
+                </tr>
+                 <tr>
+                    <td>Max Passenger Capacity</td>
+                    <td>{{data.sit}}</td>
+                </tr>
+                <tr>
+                    <td> 
+                    </td>
+                    <td> 
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+              
+            <div style="text-align: center;"> 
+                <button class="btn btn-secondary" [routerLink] ="['/home/registration-form/', id ]" >Update</button> &nbsp;
+                <button class="btn btn-secondary " (click) ="delete()">Delete</button>
+            </div>
+         
+        </div>
+    </div>

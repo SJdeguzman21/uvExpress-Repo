@@ -1,0 +1,38 @@
+<!-- 
+
+<div class=" row">
+    <div class="col-4">
+
+<ul *ngFor="let f of registeredVan | vanFilter: routeName ">
+    <li>
+        {{f.plate}}
+    </li>
+</ul>
+
+    </div>
+    <div class="col-8">
+        
+    </div>
+</div> -->
+
+
+        <div class="card" style="margin-right: 20%; margin-left: 20%; margin-top: 3%;">
+            <div class="card-body">
+            <table class="table table-striped text-center">
+                <thead>
+                    <tr>
+                    <th>UV PLate Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let r of registeredVan | vanFilter: routeName ">
+                    <td style="cursor: pointer;" (click)="select(r, r.plate)" > {{r.plate}} </td>
+                    </tr>
+                </tbody>
+                </table>        
+            </div>
+        </div>
+
+ 
+
+

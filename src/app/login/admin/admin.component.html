@@ -1,0 +1,44 @@
+
+<div calss="card" style="margin-right: 20%; margin-left: 20%;">
+    <div class="card-body">
+      <div class="col-12">
+        <h4>Admin Login</h4>
+      </div>
+        <div class="row">
+          <div class="col-12">
+            <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+  
+              <div class="row">
+                <div class="col-12">
+                  <label for="email">UserName</label>
+                  <input  class="form-control" required formControlName="username"
+                  minlength="6"
+                   >
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-12">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" required  formControlName="password"
+                  minlength="6"
+                   >
+                </div>
+              </div>
+  
+              <div class="row mt-2">
+                <div class="col-12">
+                  <a href="/login/register">Click here to register</a>
+                </div>
+                <div class="col-12">
+                  <button  class="btn btn-primary" type="submit" [disabled]= "!loginForm.valid" >Login</button>&nbsp;
+                  <button  class="btn btn-primary" type="button" routerLink="/login" > Back</button>
+                </div>
+              </div>
+  
+            </form>
+          </div>
+        </div>
+          
+    </div>
+  </div>

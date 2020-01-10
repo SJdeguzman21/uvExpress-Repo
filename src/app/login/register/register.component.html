@@ -1,0 +1,54 @@
+
+
+
+  <div calss="card" style="margin-right: 20%; margin-left: 20%;">
+    <div class="card-body">
+        <div class="row mt-4">
+          <div class="col-12">
+            <h4>User Registration</h4>
+          </div>
+        
+          <div class="col-12">
+            <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
+
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label for="firstName">First name</label>
+                  <input ngModel #name1="ngModel" name="name1" type="text" required id="name1" 
+                     class="form-control" [class.is-invalid]="!name1.valid && name1.touched">
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label for="lastName">Last name</label>
+                  <input ngModel #name2="ngModel" name="name2" type="text"
+                  required id="name2"  class="form-control" [class.is-invalid]="!name2.valid && name2.touched" >
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-2">
+                  <label for="email">Email</label>
+                  <input ngModel #email="ngModel" name="email" type="email" required id="email"
+                         class="form-control" [class.is-invalid]="!email.valid && email.touched" >
+                </div>
+              </div>
+                <div class="row">
+                  <div class="col-md-12 mb-2">
+                    <label for="password">Password</label>
+                    <input ngModel #password="ngModel" name="password" type="password"  id="password" required
+                      class="form-control" [class.is-invalid]="!password.valid && password.touched" >
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-primary" type="submit" [disabled] ="!userRegForm.valid" >Submit</button>&nbsp;
+                    <button  class="btn btn-primary" type="button" routerLink="/login" > Back</button>
+                  </div>
+                </div>
+
+            </form>
+          </div>
+        </div>
+        
+    </div>
+</div>

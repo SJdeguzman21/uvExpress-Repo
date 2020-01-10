@@ -1,0 +1,47 @@
+
+<div calss="card" style="margin-right: 20%; margin-left: 20%;">
+  <div class="card-body">
+    <div class="row" >
+      <div class="col-12" >
+        <form #f="ngForm" (ngSubmit) = "register(f.value)">
+            <div class="form-group">
+                <label for="name"> Driver Name</label>
+                    <input type="text"  id ="name" class="form-control" [(ngModel)] = "data.name" name="name"  
+                    #name="ngModel"   required [class.is-invalid]="!name.valid && name.touched" >
+            </div>
+            <div class="form-group">
+                <label for="plate">UV Plate Number</label>
+                    <input #plate="ngModel" [(ngModel)] ="data.plate" name="plate" id ="plate" type="text"
+                      class="form-control" required [class.is-invalid]="!plate.valid && plate.touched" >     
+            </div>
+            <div class="form-group" >
+                <label for="sit">Max Passenger Capacity</label>
+                    <select #sit="ngModel" [(ngModel)]="data.sit" name="sit" id ="sit"
+                      class="form-control" required [class.is-invalid]="!sit.valid && sit.touched" >
+                      <option value=""></option>
+                      <option *ngFor= "let p of passengerCapacity" >
+                          {{p.capacity}}
+                      </option>
+                    </select>
+            </div>
+            <div class="form-group" >
+                <label for="route">Route</label>
+                    <select #route="ngModel" [(ngModel)]="data.route" name="route" id ="route"
+                      class="form-control" required [class.is-invalid]="!route.valid && route.touched" >
+                      <option value=""></option>
+                      <option *ngFor= "let r of routes" >
+                          {{r.name}}
+                      </option>
+                    </select>
+            </div>
+
+            <div style="text-align: center;"> 
+                <button class="btn btn-secondary" [disabled]="!f.valid" type="submit"  >Register</button> &nbsp;
+                <button type="button" (click)="back()" class="btn btn-secondary">Back</button>
+            </div>
+               
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

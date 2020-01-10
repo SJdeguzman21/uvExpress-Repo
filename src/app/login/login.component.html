@@ -1,0 +1,16 @@
+
+<div class="form-container" style="text-align: center;">
+   <!-- <img src="assets/images/lock.svg" id="lock"> -->
+   <img src="{{data}}" id="lock">
+  
+   <img src="assets/images/lock.svg" id="g"> 
+      <button routerLink="/login/admin" id="admin" ><strong> Login As Admin</strong> </button><br>
+   <img src="assets/images/google.svg" id="g"> 
+      <button (click)="loginWithG()" id="google">Login With Google</button><br>
+   <img src="assets/images/email.svg" id="e"> 
+      <button routerLink="/login/email" id="email">Email</button><br>
+
+   <a routerLink="/login/register" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+</div>
+
+

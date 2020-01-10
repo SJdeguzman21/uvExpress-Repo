@@ -1,0 +1,20 @@
+
+<h2 style="text-align: center; margin-top: 10px;">Choose Route</h2>
+<div calss="card">
+    <div class="card-body">
+      <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>Fair</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let r of routes">
+              <td style="cursor: pointer;" [routerLink]="['/home/sit-reservation/sit-reservation1/' , r.name]">{{r.name}}</td>
+              <td > {{r.fair}}</td>
+            </tr>
+          </tbody>
+        </table>        
+    </div>
+</div>

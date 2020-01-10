@@ -1,0 +1,15 @@
+<!-------- Cards --->
+<div class="container-fluid padding" >
+    <div class="row padding"  >
+      <div class="col-md-3 col-sm-6" *ngFor="let data of data">
+        <div class="card" >
+          <img class="card-img-top" style="height: 110px;"src="{{data.img}}">
+          <div class="card-body">
+            <h5 class="card-title"> {{data.name}}</h5>
+            <p class="card-text"> {{data.description}} <a href="{{data.wikipedia}}" >Wikipedia</a></p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>

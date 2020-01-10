@@ -1,0 +1,26 @@
+<!------Navigation --->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" >
+    <div class="container-fluid" >
+      
+      <a class="navbar-brand" href="#" *ngFor="let data of data">
+        <img style="margin-top: 0px;"src="{{data.imgNav}}" height="30px"></a>
+          <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#navbarResponsive"  aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+     
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto" *ngIf = "user == true || admin == true">
+          <li class="nav-item "> 
+            <a class="nav-link" routerLink="/home"> Home</a>
+          </li>
+          <li class="nav-item" *ngIf="admin == true"> 
+            <a class="nav-link" routerLink="/home/registered-van-list"> Registered UV</a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link" (click)="logout()"> Logout</a>
+          </li>
+        </ul>
+      </div> 
+
+    </div>
+</nav> 
